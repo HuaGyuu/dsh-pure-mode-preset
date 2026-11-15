@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Pure mode preset",
+    "description": "Adds a \"Pure mode\" agent preset with no system prompt, no tool definitions and no runtime context — only the user and assistant messages reach the model.",
+    "detail": "docs/DETAIL.md"
+  }
+}

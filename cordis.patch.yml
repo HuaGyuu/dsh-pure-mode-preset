@@ -1,0 +1,20 @@
+# Adds a "Pure mode" agent preset: no system prompt, no tool definitions, no
+# runtime context and no injected user messages — only the user and assistant
+# messages reach the model.
+#
+# `pure-mode-host` (host row) strips plugin-injected user messages (e.g. dsh-mnemon)
+# for pure-mode Agents only. `preset-pure` declares the preset; its child
+# `@local/dsh-pure-mode` makes the prompt empty and masks tools/required context.
+- insert:
+    - id: pure-mode-host
+      name: '@local/dsh-pure-mode/host'
+    - id: preset-pure
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: pure
+        name: 纯净模式
+        description: 无系统提示词、无工具定义、无运行时上下文、无注入消息，只有你和 AI 的消息。
+        order: 10
+        plugins:
+          - id: pure-core
+            name: '@local/dsh-pure-mode'
